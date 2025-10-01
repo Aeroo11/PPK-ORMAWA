@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cari Kos - ITS STAY</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .search-filters {
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .filter-group {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .price-inputs {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .price-inputs input {
+            flex: 1;
+        }
+        
+        .filter-actions {
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .results-count {
+            margin: 20px 0;
+            font-size: 16px;
+            color: var(--light-text-color);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .map-view {
+            height: 500px;
+            background-color: #eee;
+            border-radius: var(--border-radius);
+            margin-bottom: 30px;
+            display: none;
+        }
+        
+        .view-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .view-toggle button {
+            padding: 10px 15px;
+            background-color: white;
+            border: 1px solid #ddd;
+            cursor: pointer;
+        }
+        
+        .view-toggle button.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .view-toggle button:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+        }
+        
+        .view-toggle button:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+        }
+        
+        .pagination a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            margin: 0 5px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            color: var(--text-color);
+        }
+        
+        .pagination a.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header (similar to index.html) -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="ITS STAY Logo">
+                <div class="logo-text">
+                    <h1>ITS STAY</h1>
+                    <p>Hunian Nyaman Mahasiswa ITS</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="kosan.html" class="active">Cari Kos</a></li>
+                    <li><a href="layanan.html">Layanan</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="language">
+                    <a href="#" class="active">ID</a> | <a href="#">EN</a>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Masuk</a>
+                    <a href="register.html" class="btn btn-primary">Daftar</a>
+                </div>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Cari Kos di Sekitar ITS</h1>
+            <p>Temukan hunian terbaik sesuai kebutuhan dan budgetmu</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="search-content">
+        <div class="container">
+            <div class="search-filters">
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Lokasi</label>
+                        <select>
+                            <option value="">Semua Lokasi</option>
+                            <option value="keputih">Keputih</option>
+                            <option value="gebang">Gebang</option>
+                            <option value="mulyosari">Mulyosari</option>
+                            <option value="sutorejo">Sutorejo</option>
+                            <option value="kejawan">Kejawan</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Tipe Kos</label>
+                        <select>
+                            <option value="">Semua Tipe</option>
+                            <option value="putra">Khusus Putra</option>
+                            <option value="putri">Khusus Putri</option>
+                            <option value="campur">Campur</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Harga Bulanan</label>
+                        <div class="price-inputs">
+                            <input type="number" placeholder="Min">
+                            <input type="number" placeholder="Max">
+                        </div>
+                    </div>
+                </div>
+                <div class="filter-row">
+                    <div class="filter-group">
+                        <label>Fasilitas</label>
+                        <select>
+                            <option value="">Semua Fasilitas</option>
+                            <option value="ac">AC</option>
+                            <option value="kamar-mandi-dalam">Kamar Mandi Dalam</option>
+                            <option value="wifi">WiFi</option>
+                            <option value="furnished">Furnished</option>
+                            <option value="dapur">Dapur</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Jarak ke Kampus</label>
+                        <select>
+                            <option value="">Semua Jarak</option>
+                            <option value="500">< 500m</option>
+                            <option value="1000">500m - 1km</option>
+                            <option value="2000">1km - 2km</option>
+                            <option value="3000">2km - 3km</option>
+                            <option value="more">3km+</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Ukuran Kamar</label>
+                        <select>
+                            <option value="">Semua Ukuran</option>
+                            <option value="small">Kecil (< 3x3m)</option>
+                            <option value="medium">Sedang (3x3m - 4x4m)</option>
+                            <option value="large">Besar (> 4x4m)</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-actions">
+                    <button class="btn btn-outline">Reset Filter</button>
+                    <button class="btn btn-primary">Terapkan Filter</button>
+                </div>
+            </div>
+            
+            <div class="view-toggle">
+                <button class="active" data-view="grid"><i class="fas fa-th-large"></i> Grid</button>
+                <button data-view="map"><i class="fas fa-map-marker-alt"></i> Map</button>
+            </div>
+            
+            <div class="map-view" id="mapView">
+                <!-- Map will be loaded here -->
+            </div>
+            
+            <div class="results-count">
+                <p>Menampilkan 12 dari 42 kos-kosan</p>
+            </div>
+            
+            <div class="results-grid" id="gridView">
+                <!-- Kosan results will be dynamically loaded here -->
+            </div>
+            
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (similar to index.html) -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/images/logo.png" alt="ITS STAY Logo">
+                    <p>Platform Terpadu Hunian Mahasiswa ITS</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Hunian</h3>
+                        <ul>
+                            <li><a href="#">Kos Putra</a></li>
+                            <li><a href="#">Kos Putri</a></li>
+                            <li><a href="#">Kos Campur</a></li>
+                            <li><a href="#">Apartment</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Layanan</h3>
+                        <ul>
+                            <li><a href="#">Pencarian Kos</a></li>
+                            <li><a href="#">Virtual Tour</a></li>
+                            <li><a href="#">Konsultasi</a></li>
+                            <li><a href="#">Program Komunitas</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Perusahaan</h3>
+                        <ul>
+                            <li><a href="#">Tentang Kami</a></li>
+                            <li><a href="#">Karir</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Hubungi Kami</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Berlangganan Newsletter</h3>
+                    <p>Dapatkan info terbaru seputar hunian dan program komunitas</p>
+                    <form>
+                        <input type="email" placeholder="Email anda...">
+                        <button type="submit" class="btn btn-primary">Langganan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ITS STAY - All Rights Reserved</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Syarat & Ketentuan</a>
+                    <a href="#">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // View toggle
+            const viewToggleButtons = document.querySelectorAll('.view-toggle button');
+            const mapView = document.getElementById('mapView');
+            const gridView = document.getElementById('gridView');
+            
+            viewToggleButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    viewToggleButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    const viewType = this.dataset.view;
+                    if (viewType === 'map') {
+                        mapView.style.display = 'block';
+                        gridView.style.display = 'none';
+                        loadMap();
+                    } else {
+                        mapView.style.display = 'none';
+                        gridView.style.display = 'grid';
+                    }
+                });
+            });
+            
+            // Load Kosan Data
+            loadKosanData();
+            
+            function loadMap() {
+                // Here would be code to load the map (e.g., Google Maps)
+                mapView.innerHTML = '<div style="padding: 20px; text-align: center;">Map view loading...</div>';
+            }
+            
+            function loadKosanData() {
+                // This would fetch data from an API in a real application
+                const kosanData = [
+                    // Same data as in script.js plus additional items
+                    {
+                        id: 1,
+                        title: "Kos Permata ITS",
+                        location: "Keputih, 500m dari ITS",
+                        price: "1.500.000",
+                        type: "putra",
+                        image: "assets/kos1.jpeg",
+                        features: {
+                            size: "3x4m",
+                            bathroom: "Dalam",
+                            ac: true
+                        }
+                    },
+                    // Add more kosan data...
+                ];
+                
+                // Generate 12 items for the grid
+                const kosanGrid = document.getElementById('gridView');
+                let kosanHTML = '';
+                
+                // Use the existing data multiple times to simulate more results
+                for (let i = 0; i < 3; i++) {
+                    kosanData.forEach(kos => {
+                        kosanHTML += `
+                            <div class="kosan-card" data-type="${kos.type}">
+                                <div class="kosan-image">
+                                    <img src="${kos.image}" alt="${kos.title}">
+                                    <div class="kosan-type">${kos.type === 'putra' ? 'Khusus Putra' : kos.type === 'putri' ? 'Khusus Putri' : 'Campur'}</div>
+                                </div>
+                                <div class="kosan-body">
+                                    <h3 class="kosan-title">${kos.title}</h3>
+                                    <div class="kosan-location">
+                                        <i class="fas fa-map-marker-alt"></i> ${kos.location}
+                                    </div>
+                                    <div class="kosan-features">
+                                        <div class="kosan-feature">
+                                            <i class="fas fa-expand-arrows-alt"></i> ${kos.features.size}
+                                        </div>
+                                        <div class="kosan-feature">
+                                            <i class="fas fa-shower"></i> ${kos.features.bathroom}
+                                        </div>
+                                        ${kos.features.ac ? 
+                                            `<div class="kosan-feature">
+                                                <i class="fas fa-snowflake"></i> AC
+                                            </div>` : ''}
+                                    </div>
+                                    <div class="kosan-footer">
+                                        <div class="kosan-price">
+                                            Rp ${kos.price} <span>/ bulan</span>
+                                        </div>
+                                        <a href="detail-kosan.html?id=${kos.id}" class="btn btn-outline-primary">Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                    });
+                }
+                
+                kosanGrid.innerHTML = kosanHTML;
+            }
+        });
+    </script>
+</body>
+</html>

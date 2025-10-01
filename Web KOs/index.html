@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITS STAY - Platform Hunian Mahasiswa ITS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="assets/logoitsfix.jpg" alt="ITS STAY Logo">
+                <div class="logo-text">
+                    <h1>ITS STAY</h1>
+                    <p>Hunian Nyaman Mahasiswa ITS</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html" class="active">Beranda</a></li>
+                    <li><a href="kosan.html">Cari Kos</a></li>
+                    <li><a href="layanan.html">Layanan</a></li>
+                    <li><a href="tentang.html">Tentang</a></li>
+                    <li><a href="kontak.html">Kontak</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <div class="search-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="language">
+                    <a href="#" class="active">ID</a> | <a href="#">EN</a>
+                </div>
+                <div class="auth-buttons">
+                    <a href="login.html" class="btn btn-outline">Masuk</a>
+                    <a href="register.html" class="btn btn-primary">Daftar</a>
+                </div>
+            </div>
+            <div class="mobile-menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section dengan Gambar Asrama ITS -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Temukan Hunian Nyaman di Sekitar Kampus ITS</h1>
+                <p>Platform terpadu yang memudahkan mahasiswa mencari kos berkualitas dan membangun koneksi dengan komunitas sekitar kampus</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Cari kos berdasarkan lokasi, harga, atau fasilitas...">
+                    <button class="btn btn-primary"><i class="fas fa-search"></i> Cari</button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="number">500+</span>
+                        <span class="text">Kos Terdaftar</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">5000+</span>
+                        <span class="text">Mahasiswa</span>
+                    </div>
+                    <div class="stat">
+                        <span class="number">50+</span>
+                        <span class="text">Mitra Komunitas</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="assets/asrama.jpg" alt="Asrama Mahasiswa ITS Surabaya">
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Banner Section -->
+    <section class="image-banner">
+        <div class="container">
+            <div class="banner-images">
+                <div class="banner-image">
+                    <img src="assets/hunian.webp" alt="Hunian Mahasiswa ITS">
+                    <div class="banner-overlay">
+                        <h3>Hunian Terbaik</h3>
+                        <p>Kenyamanan untuk fokus belajar</p>
+                    </div>
+                </div>
+                <div class="banner-image">
+                    <img src="assets/modernn.jpg" alt="Fasilitas Modern">
+                    <div class="banner-overlay">
+                        <h3>Fasilitas Modern</h3>
+                        <p>Mendukung aktivitas mahasiswa</p>
+                    </div>
+                </div>
+                <div class="banner-image">
+                    <img src="assets/lokasi.png" alt="Lokasi Strategis">
+                    <div class="banner-overlay">
+                        <h3>Lokasi Strategis</h3>
+                        <p>Dekat dengan kampus ITS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Kosan Section -->
+    <section class="featured-kosan">
+        <div class="container">
+            <div class="section-header">
+                <h2>Hunian Rekomendasi</h2>
+                <p>Kos-kosan pilihan yang banyak diminati mahasiswa baru</p>
+            </div>
+            <div class="kosan-filter">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="putra">Khusus Putra</button>
+                <button class="filter-btn" data-filter="putri">Khusus Putri</button>
+                <button class="filter-btn" data-filter="campur">Campur</button>
+            </div>
+            <div class="kosan-cards">
+                <!-- Kosan cards will be generated by JavaScript -->
+            </div>
+            <div class="view-more">
+                <a href="kosan.html" class="btn btn-outline-primary">Lihat Semua Kos</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Layanan ITS STAY</h2>
+                <p>Solusi terbaik untuk kebutuhan hunian mahasiswa</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Pencarian Kos</h3>
+                    <p>Temukan kos sesuai dengan kebutuhan dan budget dengan fitur filter lengkap</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Kolaborasi Komunitas</h3>
+                    <p>Terhubung dengan kegiatan dan program masyarakat sekitar kampus</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h3>Virtual Tour</h3>
+                    <p>Lihat kos secara detail tanpa perlu datang langsung ke lokasi</p>
+                </div>
+                <div class="service-card">
+                    <div class="icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Pembayaran Aman</h3>
+                    <p>Sistem pembayaran terpadu yang aman dan transparan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section dengan Gambar Komunitas Mahasiswa -->
+    <section class="community">
+        <div class="container">
+            <div class="community-content">
+                <h2>Kembangkan Potensimu Bersama Komunitas</h2>
+                <p>ITS STAY tidak hanya menyediakan tempat tinggal, tetapi juga membangun jembatan antara mahasiswa dan masyarakat sekitar kampus melalui berbagai program kolaboratif.</p>
+                <a href="#" class="btn btn-primary">Gabung Program Komunitas</a>
+            </div>
+            <div class="community-image">
+                <img src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2022/03/20220318_121242_0000-1024x576.png" alt="Komunitas Mahasiswa ITS">
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Life Gallery -->
+    <section class="student-life">
+        <div class="container">
+            <div class="section-header">
+                <h2>Kehidupan Mahasiswa ITS</h2>
+                <p>Rasakan pengalaman menjadi bagian dari komunitas mahasiswa ITS</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://www.its.ac.id/international/wp-content/uploads/sites/66/2020/02/DSC_0177-1.jpg" alt="Kegiatan Mahasiswa ITS">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2021/03/Tim-ITS-AAPG-SC-saat-mengikuti-kegiatan-virtual-di-ITS-700x465.jpg" alt="Belajar Bersama">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2021/10/Suasana-kegiatan-HMTC-Interaksi-1024x683.jpg" alt="Aktivitas Kampus">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2019/07/DSC_0286-1.jpg" alt="Diskusi Kelompok">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://asset.kompas.com/crops/4BXWjcPsczXKFXaiSCFSFzPkBQc=/0x0:780x520/750x500/data/photo/2021/09/14/6140b10a52bcd.jpg" alt="Suasana Kos">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2022/09/Ketua-ITS-AAPG-SC-Khansa-Muthia-Mahda-bersama-dengan-seluruh-peserta-yang-hadir-dalam-acara-ITS-AAPG-SC-Ambassador-Opening-702x526.jpeg" alt="Kegiatan Mahasiswa">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Apa Kata Mereka?</h2>
+                <p>Pengalaman penghuni ITS STAY</p>
+            </div>
+            <div class="testimonial-slider">
+                <!-- Testimonial slides will be generated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section dengan Background Image -->
+    <section class="cta" style="background-image: url('https://www.sewakost.com/files/06-2021/ad38904/its-surabaya-1857329872_large.jpg'); background-size: cover; background-position: center;">
+        <div class="container">
+            <h2>Baru Masuk ITS? Jangan Khawatir Soal Tempat Tinggal!</h2>
+            <p>Dapatkan bantuan konsultasi gratis untuk menemukan kos yang tepat</p>
+            <a href="register.html" class="btn btn-primary">Daftar Sekarang</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="assets/logoits.png" alt="ITS STAY Logo">
+                    <p>Platform Terpadu Hunian Mahasiswa ITS</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Hunian</h3>
+                        <ul>
+                            <li><a href="#">Kos Putra</a></li>
+                            <li><a href="#">Kos Putri</a></li>
+                            <li><a href="#">Kos Campur</a></li>
+                            <li><a href="#">Apartment</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Layanan</h3>
+                        <ul>
+                            <li><a href="#">Pencarian Kos</a></li>
+                            <li><a href="#">Virtual Tour</a></li>
+                            <li><a href="#">Konsultasi</a></li>
+                            <li><a href="#">Program Komunitas</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Perusahaan</h3>
+                        <ul>
+                            <li><a href="#">Tentang Kami</a></li>
+                            <li><a href="#">Karir</a></li>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Hubungi Kami</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Berlangganan Newsletter</h3>
+                    <p>Dapatkan info terbaru seputar hunian dan program komunitas</p>
+                    <form>
+                        <input type="email" placeholder="Email anda...">
+                        <button type="submit" class="btn btn-primary">Langganan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 ITS STAY - All Rights Reserved</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Syarat & Ketentuan</a>
+                    <a href="#">Kebijakan Privasi</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
